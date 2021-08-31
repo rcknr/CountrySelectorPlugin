@@ -1,0 +1,18 @@
+{
+  "name": "swag/plugin-skeleton",
+  "description": "Skeleton plugin",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "CountrySelectorPlugin\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "CountrySelectorPlugin\\CountrySelectorPlugin",
+    "label": {
+      "de-DE": "Country Selector",
+      "en-GB": "Country Selector"
+    }
+  }
+}

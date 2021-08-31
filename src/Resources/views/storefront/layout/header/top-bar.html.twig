@@ -1,0 +1,18 @@
+{% sw_extends '@Storefront/storefront/layout/header/top-bar.html.twig' %}
+
+{% block layout_header_top_bar_language %}
+    <div class="top-bar-nav-item">
+        <a class="btn top-bar-nav-btn" data-toggle="modal" data-url="/countries" href="/countries" id="countries">Switch country</a>
+        <script>
+            (() => {
+                document.addEventListener('readystatechange', event => {
+                    if (event.target.readyState === 'complete') {
+                        const cookie = document.cookie.match(/country=[^;]+/);
+                        if (!cookie) { document.querySelector('#countries').click(); }
+                    }
+                }, false);
+            })()
+        </script>
+    </div>
+    {{ parent() }}
+{% endblock %}

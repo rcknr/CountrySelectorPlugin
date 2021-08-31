@@ -1,0 +1,12 @@
+<form onsubmit="document.cookie = `country=${this.country.value}`">
+    <div class="form-group">
+        <select name="country" class="custom-select"
+                onchange="this.form.querySelector('button[type=submit]').disabled = false">
+            <option disabled {{ country ? '' : 'selected' }}>Select your country</option>
+            {% for key, value in options %}
+                <option value="{{ key }}" {{ country == key ? 'selected' : '' }}>{{ value | trans }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary float-right" disabled>Save changes</button>
+</form>
